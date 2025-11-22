@@ -1,4 +1,14 @@
-/* Add to assets/css/styles.css - JavaScript-enhanced styles */
+/* CSS Variables */
+:root {
+    --teal: #0b7a72;        /* Primary brand color */
+    --light-gray: #f6f7f8;  /* Background color */
+    --dark-gray: #333;      /* Text color */
+    --white: #ffffff;       /* White color */
+}
+
+/* ================================
+   JavaScript-Enhanced Styles
+   ================================ */
 
 /* Hamburger Animation */
 .hamburger.active span:nth-child(1) {
