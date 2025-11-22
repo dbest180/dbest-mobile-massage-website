@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact DBest Mobile Massage - Book Your Session</title>
+    <meta name="description" content="Contact DBest Mobile Massage to schedule your mobile massage session. We bring professional massage therapy to your location.">
+    
+    <!-- CSS Files -->
+    <!-- MAIN STYLES: Base responsive styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- HERO STYLES: Hero section and component styles -->
+    <link rel="stylesheet" href="assets/css/hero.css">
+    <!-- FORM STYLES: Additional form-specific styling -->
+    <link rel="stylesheet" href="assets/css/forms.css">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Contact DBest Mobile Massage - Book Your Session">
+    <meta property="og:description" content="Schedule your professional mobile massage therapy session. We come to you.">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">DBest Mobile Massage</a>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html" aria-current="page">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Contact Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Book Your Massage Session</h1>
+                <p>Ready to experience professional mobile massage? Fill out the form below and we'll contact you within 24 hours to confirm your appointment.</p>
+            </div>
+        </section>
+
+        <!-- Contact Form & Info -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <h2>Schedule Your Appointment</h2>
+                        <form id="booking-form" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" data-validate>
+                            <!-- Form Messages (Dynamic) -->
+                            <div class="form-messages"></div>
+
+                            <!-- Personal Information -->
+                            <div class="form-group">
+                                <label for="full-name">Full Name *</label>
+                                <input type="text" id="full-name" name="full-name" required placeholder="Enter your full name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+                            </div>
+
+                            <!-- Service Selection -->
+                            <div class="form-group">
+                                <label for="service-type">Preferred Service *</label>
+                                <select id="service-type" name="service-type" required>
+                                    <option value="">Select a service</option>
+                                    <option value="swedish-60">Swedish Massage - 1 Hour ($100)</option>
+                                    <option value="swedish-90">Swedish Massage - 1.5 Hours ($140)</option>
+                                    <option value="deep-tissue-60">Deep Tissue - 1 Hour ($100)</option>
+                                    <option value="deep-tissue-90">Deep Tissue - 1.5 Hours ($140)</option>
+                                    <option value="hot-stones">Hot Stone Therapy (+$25 with any service)</option>
+                                    <option value="not-sure">Not Sure - Please Advise</option>
+                                </select>
+                            </div>
+
+                            <!-- Session Details -->
+                            <div class="form-group">
+                                <label for="session-date">Preferred Date</label>
+                                <input type="date" id="session-date" name="session-date" min="<?= date('Y-m-d', strtotime('+1 day')) ?>">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="session-time">Preferred Time</label>
+                                <select id="session-time" name="session-time">
+                                    <option value="">Select preferred time</option>
+                                    <option value="morning">Morning (8 AM - 12 PM)</option>
+                                    <option value="afternoon">Afternoon (12 PM - 5 PM)</option>
+                                    <option value="evening">Evening (5 PM - 9 PM)</option>
+                                </select>
+                            </div>
+
+                            <!-- Location Details -->
+                            <div class="form-group">
+                                <label for="location-type">Massage Location *</label>
+                                <select id="location-type" name="location-type" required>
+                                    <option value="">Select location type</option>
+                                    <option value="home">Home</option>
+                                    <option value="office">Office</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="address">Full Address *</label>
+                                <textarea id="address" name="address" required placeholder="Please provide your complete address including city, state, and zip code" rows="3"></textarea>
+                            </div>
+
+                            <!-- Special Requirements -->
+                            <div class="form-group full-width">
+                                <label for="special-requests">Special Requests or Medical Conditions</label>
+                                <textarea id="special-requests" name="special-requests" placeholder="Please mention any health conditions, areas of focus, or special requirements..." rows="4"></textarea>
+                                <div class="help-text">This helps us prepare for your session and ensure your safety and comfort.</div>
+                            </div>
+
+                            <!-- How Heard About Us -->
+                            <div class="form-group">
+                                <label for="referral-source">How did you hear about us?</label>
+                                <select id="referral-source" name="referral-source">
+                                    <option value="">Please select</option>
+                                    <option value="google">Google Search</option>
+                                    <option value="social-media">Social Media</option>
+                                    <option value="friend">Friend Referral</option>
+                                    <option value="previous-client">Previous Client</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <!-- Consent -->
+                            <div class="form-group full-width consent-group">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="consent" name="consent" required>
+                                    <label for="consent">
+                                        I understand that this is a booking request and my appointment will be confirmed by phone or email. I agree to the cancellation policy.
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-large">
+                                    <span class="btn-text">Submit Booking Request</span>
+                                    <span class="btn-loading" style="display: none;">Sending...</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <h3>Contact Information</h3>
+                            
+                            <div class="contact-method">
+                                <h4>📧 Booking Process</h4>
+                                <p>Submit the form and we'll contact you within 24 hours to confirm availability and finalize your appointment.</p>
+                            </div>
+
+                            <div class="contact-method">
+                                <h4>📍 Service Area</h4>
+                                <p>We serve the greater metropolitan area. Please provide your complete address in the form.</p>
+                            </div>
+
+                            <div class="contact-method">
+                                <h4>⏰ Business Hours</h4>
+                                <p>Monday - Sunday: 8:00 AM - 9:00 PM<br>By appointment only</p>
+                            </div>
+
+                            <div class="contact-method">
+                                <h4>💬 Response Time</h4>
+                                <p>We typically respond to booking requests within 2-4 hours during business hours.</p>
+                            </div>
+
+                            <!-- Quick FAQ Preview -->
+                            <div class="faq-preview">
+                                <h4>Common Questions</h4>
+                                <details>
+                                    <summary>What should I prepare for my session?</summary>
+                                    <p>Just provide a quiet space with enough room for the massage table. We bring everything else!</p>
+                                </details>
+                                <details>
+                                    <summary>What's your cancellation policy?</summary>
+                                    <p>We require 24 hours notice for cancellations. See our FAQ page for full details.</p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DBest Mobile Massage</h3>
+                    <p>Professional massage therapy delivered to your location.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>By appointment only</p>
+                    <p>Please use our contact form</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 DBest Mobile Massage. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/main.js"></script>
+    <!-- FORM ENHANCEMENTS: Additional form functionality -->
+    <script src="assets/js/forms.js"></script>
+</body>
+</html>
