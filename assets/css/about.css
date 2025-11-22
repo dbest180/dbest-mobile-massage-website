@@ -1,0 +1,493 @@
+/* assets/css/about.css */
+/* About page specific styling */
+
+.page-hero {
+    background: linear-gradient(135deg, var(--teal) 0%, #0a6a63 100%);
+    color: var(--white);
+    padding: 120px 0 60px;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Practitioner Section */
+.practitioner-section {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.practitioner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.practitioner-image {
+    position: relative;
+}
+
+.practitioner-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.certification-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: var(--teal);
+    color: var(--white);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.practitioner-header {
+    margin-bottom: 2rem;
+}
+
+.practitioner-header h2 {
+    font-size: 2.5rem;
+    color: var(--teal);
+    margin-bottom: 0.5rem;
+}
+
+.practitioner-tagline {
+    font-size: 1.2rem;
+    color: #666;
+    font-style: italic;
+}
+
+.practitioner-bio {
+    margin-bottom: 2rem;
+}
+
+.practitioner-bio p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+.qualifications h3 {
+    color: var(--teal);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.qualifications-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.qualification-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--light-gray);
+    border-radius: 8px;
+    border-left: 4px solid var(--teal);
+}
+
+.qual-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.qualification-item div {
+    display: flex;
+    flex-direction: column;
+}
+
+.qualification-item strong {
+    color: var(--dark-gray);
+    margin-bottom: 0.25rem;
+}
+
+.qualification-item span {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Mission & Values */
+.mission-section {
+    padding: 80px 0;
+    background: var(--light-gray);
+}
+
+.mission-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.mission-header h2 {
+    font-size: 2.5rem;
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+}
+
+.mission-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.value-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.value-card h3 {
+    color: var(--teal);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.value-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Mobile Benefits */
+.mobile-benefits-section {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.benefits-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.benefits-header h2 {
+    font-size: 2.5rem;
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+}
+
+.benefits-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-item {
+    background: var(--light-gray);
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    position: relative;
+    border-left: 4px solid var(--teal);
+}
+
+.benefit-number {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    background: var(--teal);
+    color: var(--white);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.benefit-item h3 {
+    color: var(--teal);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.benefit-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Approach Section */
+.approach-section {
+    padding: 80px 0;
+    background: var(--light-gray);
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.approach-content h2 {
+    font-size: 2.5rem;
+    color: var(--teal);
+    margin-bottom: 1rem;
+}
+
+.approach-content > p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.approach-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.approach-step {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.step-number {
+    background: var(--teal);
+    color: var(--white);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+}
+
+.step-content h4 {
+    color: var(--dark-gray);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.step-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.approach-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.image-caption {
+    margin-top: 1rem;
+    text-align: center;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.image-caption strong {
+    display: block;
+    color: var(--teal);
+    margin-bottom: 0.25rem;
+}
+
+.image-caption span {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Safety Section */
+.safety-section {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.safety-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.safety-header h2 {
+    font-size: 2.5rem;
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+}
+
+.safety-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.safety-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.safety-item {
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.safety-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.safety-item h3 {
+    color: var(--teal);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.safety-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* About CTA */
+.about-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--teal) 0%, #0a6a63 100%);
+    color: var(--white);
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .practitioner-grid,
+    .approach-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .practitioner-image {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .approach-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 100px 0 40px;
+    }
+    
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .practitioner-section,
+    .mission-section,
+    .mobile-benefits-section,
+    .approach-section,
+    .safety-section,
+    .about-cta {
+        padding: 60px 0;
+    }
+    
+    .practitioner-header h2,
+    .mission-header h2,
+    .benefits-header h2,
+    .approach-content h2,
+    .safety-header h2 {
+        font-size: 2rem;
+    }
+    
+    .values-grid,
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .qualification-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .approach-step {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+}
