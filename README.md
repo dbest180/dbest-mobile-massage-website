@@ -1,12 +1,3 @@
-# DBest Mobile Massage Website
-
-A professional, responsive website for DBest Mobile Massage - a mobile massage therapy business. Built with pure HTML, CSS, and JavaScript for maximum compatibility and performance.
-
-## 🚀 Live Demo
-
-[View Live Site](https://dbest180.github.io/dbest-mobile-massage-website/) *(Replace with your actual GitHub Pages URL)*
-
-## 📋 Project Structure
 
 ## 🛠️ Setup Instructions
 
