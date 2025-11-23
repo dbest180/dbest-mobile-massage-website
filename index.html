@@ -6,16 +6,396 @@
     <title>DBest Mobile Massage - Professional Mobile Massage Therapy</title>
     <meta name="description" content="DBest Mobile Massage brings professional massage therapy to your home or office. Swedish, Deep Tissue, Hot Stones and more.">
     
-    <!-- CSS Files -->
-    <!-- MAIN STYLES: This is the primary stylesheet you downloaded -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- HERO STYLES: Additional styling for the hero section -->
-    <link rel="stylesheet" href="assets/css/hero.css">
-    
-    <!-- Open Graph Tags for Social Media Sharing -->
+    <!-- Open Graph Tags -->
     <meta property="og:title" content="DBest Mobile Massage - Professional Mobile Massage Therapy">
     <meta property="og:description" content="Relaxation and therapy delivered to your doorstep. Licensed massage therapist serving your area.">
     <meta property="og:type" content="website">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .logo:hover {
+            color: #4a90e2;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #4a90e2;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #4a90e2;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #2c5282;
+            transition: 0.3s;
+        }
+        
+        /* Header Banner */
+        .header-banner {
+            width: 100%;
+            height: 500px;
+            background-image: url('assets/images/image_01.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .header-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(44, 82, 130, 0.7), rgba(74, 144, 226, 0.6));
+        }
+        
+        .banner-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+        }
+        
+        .banner-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            font-weight: 700;
+        }
+        
+        .banner-content p {
+            font-size: 1.3rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            background: linear-gradient(to bottom, #f8f9fa, #fff);
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h2 {
+            font-size: 2.5rem;
+            color: #2c5282;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: #4a90e2;
+            color: white;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: #357abd;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #4a90e2;
+            border: 2px solid #4a90e2;
+        }
+        
+        .btn-secondary:hover {
+            background: #4a90e2;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Featured Services */
+        .featured-services {
+            padding: 5rem 0;
+            background: #fff;
+        }
+        
+        .featured-services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c5282;
+            margin-bottom: 3rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: #f8f9fa;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.2);
+            border-color: #4a90e2;
+        }
+        
+        .service-card h3 {
+            font-size: 1.8rem;
+            color: #2c5282;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+        
+        .service-card .price {
+            display: inline-block;
+            background: #4a90e2;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        /* Call to Action */
+        .cta {
+            background: linear-gradient(135deg, #2c5282, #4a90e2);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta .btn-primary {
+            background: white;
+            color: #4a90e2;
+        }
+        
+        .cta .btn-primary:hover {
+            background: #f8f9fa;
+            color: #2c5282;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3, .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #4a90e2;
+        }
+        
+        .footer-section p {
+            color: #aaa;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #4a90e2;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #fff;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .header-banner {
+                height: 350px;
+            }
+            
+            .banner-content h1 {
+                font-size: 2rem;
+            }
+            
+            .banner-content p {
+                font-size: 1rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .featured-services h2, .cta h2 {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -33,7 +413,7 @@
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
                 
-                <div class="hamburger">
+                <div class="hamburger" onclick="toggleMenu()">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -41,6 +421,14 @@
             </nav>
         </div>
     </header>
+
+    <!-- Header Banner -->
+    <div class="header-banner">
+        <div class="banner-content">
+            <h1>Professional Massage Therapy Delivered to You</h1>
+            <p>Experience premium relaxation in the comfort of your home or office</p>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -54,110 +442,43 @@
                 </div>
             </div>
             <div class="hero-image">
-                <!-- Using your actual hero image -->
-                <img src="assets/images/hero-massage.jpg" alt="Professional massage therapy session" width="500" height="400">
+                <img src="assets/images/image_01.jpg" alt="Professional massage therapy session" width="600" height="400">
             </div>
         </div>
     </section>
 
-    <!-- Featured Services Preview -->
+    <!-- Featured Services -->
     <section class="featured-services">
         <div class="container">
             <h2>Our Popular Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">💆‍♀️</div>
                     <h3>Swedish Massage</h3>
-                    <p>Perfect for relaxation and stress relief. Gentle techniques promote overall wellness.</p>
+                    <p>Perfect for relaxation and stress relief. Gentle techniques promote overall wellness and deep relaxation.</p>
                     <span class="price">$100 - 1 hour</span>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">🔍</div>
                     <h3>Deep Tissue</h3>
-                    <p>Target chronic pain and muscle tension. Focused pressure on deeper muscle layers.</p>
+                    <p>Target chronic pain and muscle tension. Focused pressure on deeper muscle layers for therapeutic relief.</p>
                     <span class="price">$140 - 1.5 hours</span>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">🔥</div>
                     <h3>Hot Stone Therapy</h3>
-                    <p>Warm basalt stones provide deep muscle relaxation and improved circulation.</p>
+                    <p>Warm basalt stones provide deep muscle relaxation and improved circulation for ultimate comfort.</p>
                     <span class="price">+$25 per session</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-us">
+    <!-- Call to Action -->
+    <section class="cta">
         <div class="container">
-            <h2>Why Choose DBest Mobile Massage?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">🏠</div>
-                    <h3>Convenience</h3>
-                    <p>We come to you - home, office, or hotel. No travel, no parking, just relaxation.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">⭐</div>
-                    <h3>Professional Quality</h3>
-                    <p>Licensed therapist with professional equipment and premium products.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">🎯</div>
-                    <h3>Personalized Service</h3>
-                    <p>Every session is tailored to your specific needs and comfort level.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">⏰</div>
-                    <h3>Flexible Scheduling</h3>
-                    <p>Available 7 days a week with evening appointments to fit your busy schedule.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonial Preview -->
-    <section class="testimonial-preview">
-        <div class="container">
-            <h2>What Our Clients Say</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Absolutely amazing! Having a professional massage at home was so convenient. The therapist was incredibly skilled and professional."
-                    </div>
-                    <div class="client-info">
-                        <strong>Sarah M.</strong>
-                        <span>Regular Client</span>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Perfect for relieving my chronic back pain. The mobile service means I don't have to sit in a car uncomfortable after my session."
-                    </div>
-                    <div class="client-info">
-                        <strong>James R.</strong>
-                        <span>Deep Tissue Client</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final Call to Action -->
-    <section class="final-cta">
-        <div class="container">
-            <h2>Ready to Experience the Difference?</h2>
-            <p>Join hundreds of satisfied clients who have discovered the convenience and quality of mobile massage therapy.</p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn btn-primary btn-large">Book Your First Session</a>
-                <a href="tel:555-123-4567" class="btn btn-secondary">Call to Inquire</a>
-            </div>
+            <h2>Ready to Experience Mobile Massage?</h2>
+            <p>Contact us today to schedule your first session. We'll bring everything needed for a professional massage experience.</p>
+            <a href="contact.html" class="btn btn-primary">Get Started Today</a>
         </div>
     </section>
 
@@ -193,7 +514,12 @@
         </div>
     </footer>
 
-    <!-- JavaScript Files -->
-    <script src="assets/js/main.js"></script>
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
